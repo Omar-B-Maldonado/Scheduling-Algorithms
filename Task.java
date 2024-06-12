@@ -1,4 +1,4 @@
-public class Task implements Runnable
+public class Task
 {
     private String name;
     private int    priority;
@@ -39,10 +39,10 @@ public class Task implements Runnable
         else return false;
     }
 
-    @Override
-    public void run() 
+    /* Returns this task's running status to the CPU as a String */
+    public String run() 
     {
-        System.out.println("Running " + this);
+        return ("Running " + this);
     }
 
     @Override
