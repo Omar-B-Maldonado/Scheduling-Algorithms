@@ -1,27 +1,33 @@
 import java.util.ArrayList;
 
-public class FCFS implements Algorithm {
-
-    public ArrayList<Task> queue;
+/* This class schedules tasks in the order in which they
+ * request the CPU
+ */
+public class FCFS implements Algorithm
+{
+    private ArrayList<Task> queue;
 
     public FCFS(ArrayList<Task> queue)
     {
         this.queue = queue;
-
-        //TODO maybe call schedule?
     }
 
+    /* This method selects a task via the FCFS scheduling critera
+     * and allocates the CPU to that task */
     @Override
     public void schedule() 
     {
-        // TODO Auto-generated method stub
+        while (!queue.isEmpty())
+        {
+            Task selected = pickNextTask();             //select a task
+            CPU.run(selected, selected.getBurstTime()); //run it on the CPU
+        }
     }
 
+    /* This method removes and returns the first Task from the queue (FCFS) */
     @Override
     public Task pickNextTask() 
     {
-        // TODO Auto-generated method stub
-        return null;
+        return queue.removeFirst();
     }
-    
 }
