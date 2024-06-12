@@ -22,6 +22,45 @@ public class Driver
 
     public static void main(String[] args)
     {
-        //TODO
+        if (args.length != 2) {
+            System.err.println("Args as <algorithm> <scheduleTextFile>");
+        }
+
+        //create queue of tasks
+        List<Task> queue = new ArrayList<Task>();
+
+        BufferedReader inFile = new BufferedReader(new FileReader(args[1]));
+       
+        //read the schedule text and populate the queue
+         while ( (schedule = inFile.readLine()) != null) {
+            String[] params = schedule.split(",\\s*");
+            queue.add(new Task(params[0], Integer.parseInt(params[1]), Integer.parseInt(params[2])));
+        }
+
+        Algorithm scheduler = null;
+        String algoType = args[0].toUpperCase();
+
+        switch(algoType) {
+            case "FCFS": 
+                scheduler = new FCFS(queue);
+                break;
+            case "SJF": 
+                scheduler = new SJF(queue);
+                break;
+            case "PRI": 
+                scheduler = new PRI(queue);
+                break;
+            case "RR": 
+                scheduler = new RR(queue);
+                break;
+            case "PRI-RR": 
+                scheduler = new PriorityRR(queue);
+                break;
+            default:
+                System.err.println("Invalid algorithm");
+                System.exit(0);
+        }
+
+        scheduler.schedule();
     }
 }
