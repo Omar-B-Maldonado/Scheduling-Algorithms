@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class RR implements Algorithm
 {
     private ArrayList<Task> queue;
-    private int timeSlice = 10;
+    private int timeSlice = 10; //each task will run for 10
     
     public RR(ArrayList<Task> queue)
     {
