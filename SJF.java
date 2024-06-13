@@ -28,11 +28,10 @@ public class SJF implements Algorithm{
         }
     }
 
-
     @Override
     public Task pickNextTask() 
     {
-        return queue.removeFirst(); //returns and removes the first task in the queue
+        return queue.removeFirst(); //removes and returns the first task in the queue
     }
         
 

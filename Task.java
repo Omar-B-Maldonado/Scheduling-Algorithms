@@ -30,10 +30,9 @@ public class Task
         this.burstTime = burstTime;
     }
 
-    /**
-     * We override equals() so we can use a
-     * Task object in Java collection classes.
-     */
+    /* We override equals() so we can use a
+     * Task object in Java collection classes. */
+    @Override
     public boolean equals(Object other) {
         if (this == other) return true;
         else return false;

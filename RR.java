@@ -1,21 +1,19 @@
 import java.util.ArrayList;
 
-/* This class selects task in the order in which they request the CPU
- * while allocating each task a timeSlice of 10 to run.
- * If the task is incomplete after running for its alloted time, it gets added to the back of the queue.
+/* This class selects tasks in the order in which they request the CPU.
+ * The selected is allocated to the CPU for a timeSlice of 10
+ * and is added to the back of the queue if it still has remaining burst time.
  */
 public class RR implements Algorithm
 {
     private ArrayList<Task> queue;
-    private int timeSlice = 10; //each task will run for 10
+    private int timeSlice = 10; //each task will run for a timeslice of 10
     
     public RR(ArrayList<Task> queue)
     {
         this.queue = queue;
     }
 
-    /* This method runs the selected task for a timeSlice of 10
-     * and adds it to the back of the queue if the task still has remaining burst time */
     @Override
     public void schedule() 
     {
@@ -33,11 +31,10 @@ public class RR implements Algorithm
         }
     }
 
-    /* This method selects the first task in the queue */
     @Override
     public Task pickNextTask() 
     {
-        return queue.removeFirst();
+        return queue.removeFirst(); //removes and returns the queue's first task
     }
     
 }
