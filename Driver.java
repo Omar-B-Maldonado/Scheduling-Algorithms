@@ -16,13 +16,14 @@
  */
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Driver 
 {
     ArrayList<Task> tasks;
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws NumberFormatException, IOException
     {
         if (args.length != 2) {
             System.err.println("Args as <algorithm> <scheduleTextFile>");
@@ -34,10 +35,11 @@ public class Driver
         BufferedReader inFile = new BufferedReader(new FileReader(args[1]));
         String schedule;
         //read the schedule text and populate the queue
-         while ( (schedule = inFile.readLine()) != null) {
+         while ( (schedule = inFile.readLine()) != null ) {
             String[] params = schedule.split(",\\s*");
             queue.add(new Task(params[0], Integer.parseInt(params[1]), Integer.parseInt(params[2])));
         }
+        inFile.close();
 
         Algorithm scheduler = null;
         String algoType = args[0].toUpperCase();

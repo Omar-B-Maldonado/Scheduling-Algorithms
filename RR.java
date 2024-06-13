@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /* This class selects task in the order in which they request the CPU
- * while allocating each class a timeSlice of 10 to run.
+ * while allocating each task a timeSlice of 10 to run.
  * If the task is incomplete after running for its alloted time, it gets added to the back of the queue.
  */
 public class RR implements Algorithm

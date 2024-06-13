@@ -42,7 +42,7 @@ public class Task
     /* Returns this task's running status to the CPU as a String */
     public String run() 
     {
-        return ("Running " + this);
+        return ("Running " + "(" + this + ")");
     }
 
     @Override
