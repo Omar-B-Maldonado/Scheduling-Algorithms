@@ -14,23 +14,27 @@
  *
  *  algorithm = {FCFS, SJF, PRI, RR, PRI-RR}
  */
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Driver 
 {
     ArrayList<Task> tasks;
 
-    public static void main(String[] args)
+    
+    public static void main(String[] args) throws IOException
     {
         if (args.length != 2) {
             System.err.println("Args as <algorithm> <scheduleTextFile>");
         }
 
         //create queue of tasks
-        List<Task> queue = new ArrayList<Task>();
+        ArrayList<Task> queue = new ArrayList<Task>();
 
         BufferedReader inFile = new BufferedReader(new FileReader(args[1]));
-       
+        String schedule;
         //read the schedule text and populate the queue
          while ( (schedule = inFile.readLine()) != null) {
             String[] params = schedule.split(",\\s*");
@@ -48,13 +52,13 @@ public class Driver
                 scheduler = new SJF(queue);
                 break;
             case "PRI": 
-                scheduler = new PRI(queue);
+                //scheduler = new PRI(queue);
                 break;
             case "RR": 
                 scheduler = new RR(queue);
                 break;
             case "PRI-RR": 
-                scheduler = new PriorityRR(queue);
+                //scheduler = new PriorityRR(queue);
                 break;
             default:
                 System.err.println("Invalid algorithm");
