@@ -6,15 +6,10 @@ import java.util.ArrayList;
  */
 public class PriorityRR implements Algorithm
 {
-    private ArrayList<Task> queue;
     private ArrayList<ArrayList<Task>> multilevelQueue; //each level is an array list of tasks;
-    private int timeSlice = 10;
 
     public PriorityRR(ArrayList<Task> queue)
     {
-        this.queue = queue;
-        //sort queue by priority
-        //split queue into levels (sorted by priority)
         multilevelQueue = new ArrayList<>();
         
         //add 10 "mini queues" to the multi level queue (one for each priority level)
