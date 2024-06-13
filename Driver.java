@@ -40,6 +40,7 @@ public class Driver
             String[] params = schedule.split(",\\s*");
             queue.add(new Task(params[0], Integer.parseInt(params[1]), Integer.parseInt(params[2])));
         }
+        inFile.close();
 
         Algorithm scheduler = null;
         String algoType = args[0].toUpperCase();
@@ -64,7 +65,6 @@ public class Driver
                 System.err.println("Invalid algorithm");
                 System.exit(0);
         }
-
         scheduler.schedule();
     }
 }
