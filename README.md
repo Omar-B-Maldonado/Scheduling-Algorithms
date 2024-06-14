@@ -14,10 +14,14 @@ Priorities range from 1 to 10, where a higher numeric value indicates a higher r
 
 ### Running the Program:
 1. Clone the repo
-2. cd into the folder via the terminal
-3. Compile and run using the following command: **java Driver fcfs schedule.txt**
+2. cd into the project folder via the terminal
+3. Compile and run the project using the following terminal commands:
+   ```
+   javac *.java
+   java Driver FCFS schedule.txt
+   ```
 
-Replace 'fcfs' with the desired scheduling algorithm (sjf, pri, rr, pri-rr)
+Replace 'FCFS' with the desired scheduling algorithm's ***case-insensitive*** abbreviation (FCFS, SJF, PRI, RR, or PRI-RR).
 
 ### Implementation Details
 Driver.java reads the schedule of tasks, inserts them into a queue(ArrayList), and invokes the process scheduler by the 'schedule()' method. The Algorithm interface identifies a generic scheduling algorithm that the different algorithms will implement. 
