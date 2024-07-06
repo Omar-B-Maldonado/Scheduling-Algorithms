@@ -1,7 +1,7 @@
 Process Scheduler Simulator
 ---------------------------
 
-This project involves implementing several different process scheduling algorithms. There is a predefined set of tasks that will be scheduled based on the selected scheduling algorithms. Each task is assigned a priority and burst time.
+This project involves implementing several different process scheduling algorithms. There is a predefined set of tasks that will be scheduled based on the selected scheduling algorithm. Each task is assigned a priority and burst time.
 
 ### Scheduling Algorithms Implemented:  
 1. **First-come, first-served (FCFS)**: schedules the tasks in the order they request the CPU.
