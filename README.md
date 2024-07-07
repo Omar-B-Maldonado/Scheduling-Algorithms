@@ -3,7 +3,7 @@
 ### About
 > This project involves implementing several different process scheduling algorithms. There is a predefined set of tasks that will be scheduled based on the selected scheduling algorithm. Each task is assigned a priority and burst time.
 
-### Scheduling Algorithms Implemented:  
+### Scheduling Algorithms Implemented 
 > 1. **First-come, first-served (FCFS)**: schedules the tasks in the order they request the CPU.
 > 2. **Shortest-job-first (SJF)**: schedules tasks in order of the length of the tasks' next CPU burst.
 > 3. **Priority (PRI)**: schedules tasks based on priority.
@@ -12,7 +12,7 @@
 >
 > *Note: Priorities range from 1 to 10, where a higher numeric value indicates a higher relative priority. For round-robin scheduling, the length of a time quantum is 10 milliseconds.*
 
-### Running the Program:
+### Running the Program
 > 1. Clone the repo
 > 2. cd into the project folder via the terminal
 > 3. Compile and run the project using the following terminal commands:
