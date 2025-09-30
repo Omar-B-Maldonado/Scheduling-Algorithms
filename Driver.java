@@ -1,4 +1,4 @@
-/* This class emonstrates different scheduling algorithms.
+/* This class demonstrates different scheduling algorithms.
  * 
  * Main() reads in the schedule of tasks (via reading the schedule.txt file)
  * and inserts each task into an ArrayList.
